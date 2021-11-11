@@ -1,6 +1,6 @@
 package junit.tutorial.ex01.e01;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
@@ -28,7 +28,18 @@ class StringUtilsTest {
 
 	@Test
 	void testToSnakeCase() {
-		fail("Not yet implemented");
+		String result = StringUtils.toSnakeCase("aaa");
+		assertEquals("aaa", result, "toSnakeCase(aaa) error");
+	}
+	@Test
+	void testToSnakeCase2() {
+		String result = StringUtils.toSnakeCase("HelloWorld");
+		assertEquals("hello_world", result, "toSnakeCase(HelloWorld) error");
+	}
+	@Test
+	void testToSnakeCase3() {
+		String result = StringUtils.toSnakeCase("practiceJunit");
+		assertEquals("practice_junit", result, "toSnakeCase(practiceJunit) error");
 	}
 
 }
